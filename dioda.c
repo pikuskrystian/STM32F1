@@ -15,7 +15,8 @@ void delay(int time){
 	int i;
 	for(i=0;i<time*570;i++){}
 }
-
+//port D
+//pin 11-15
 int main(void)
 {
 
@@ -23,20 +24,20 @@ int main(void)
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 
 	GPIO_InitTypeDef gpio;
-	gpio.Pin = GPIO_PIN_5;
+	gpio.Pin = GPIO_PIN_11;
 	gpio.Mode = GPIO_MODE_OUTPUT_PP;
 	gpio.Pull = GPIO_NOPULL;
 	gpio.Speed = GPIO_SPEED_FREQ_LOW;
 
-	HAL_GPIO_Init(GPIOA, &gpio);
+	HAL_GPIO_Init(GPIOD, &gpio);
 
 
 
 	while(1)
 	{
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // zapalenie diody
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_SET); // zapalenie diody
 		delay(100);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // zgaszenie diody
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_RESET); // zgaszenie diody
 		delay(400);
 	}
 }
