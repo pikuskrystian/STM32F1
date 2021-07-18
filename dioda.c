@@ -10,7 +10,7 @@
 
 
 #include "stm32f4xx.h"
-
+//#include "stm32f1xx.h"
 void delay(int time){
 	int i;
 	for(i=0;i<time*570;i++){}
