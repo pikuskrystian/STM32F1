@@ -50,10 +50,10 @@ int main(void)
 
 	while(1)
 	{
-		if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0) == GPIO_PIN_RESET) { // jesli przycisk jest przycisniety,
-					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_SET); // zapal diode
+		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) { // jesli przycisk jest przycisniety,
+					HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET); // zapal diode
 				} else {
-					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
 				}
 			}
 	}
